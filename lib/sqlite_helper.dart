@@ -67,7 +67,7 @@ class SqliteHelper{
     return numOfRows>0;
   }
 
-  Future<List<Map>> fetchAllOrderedByID({bool desc=false}) async {
+  Future<List<Map>> fetchAllOrderedByID({bool desc=true}) async {
     /*todo 5: Fetch all items from the db*/
     await open();
     List<Map> items=await _database.query(tableName,orderBy: 'id ${desc?'desc':'asc'}');
